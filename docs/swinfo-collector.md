@@ -11,25 +11,29 @@ Este proyecto se trata sobre la colección de datos de todos los switches integr
 | /switch-port/port/add  | Agregar puerto.                       |
 
 ## Archivos Relacionados
-•	routes/switch-info.py
-•	modules/switch-info.py
+-	routes/switch-info.py
+-	modules/switch-info.py
 
 ## Guia para articular un API JSON
 La estructura del proyecto se basa en las siguientes entidades:
-•	Switch (id, modelo, serial-number, puerto)
+-	Switch (id, modelo, serial-number, puerto)
 
 
 
 ## Operaciones de Almacenamiento de datos
 #### Operaciones para un switch
-•	Se solicita modelo, número de serie y puerto.
-•	El ID se auto asigna.
+-	Se solicita modelo, número de serie y puerto.
+-	El ID se auto asigna.
 ## Estructuras de solicitud y respuesta
-####Registro de usuario
+### Registro de usuario
 {
+
     "modelo": "Catalyst",
+
     "serial-number": "FGH11549"
+
     "puerto": "g0/0"
+
 
 }
 
