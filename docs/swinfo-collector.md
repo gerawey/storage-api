@@ -3,11 +3,11 @@ Este proyecto se trata sobre la colección de datos de todos los switches integr
 
 ## Modo de uso
 
-|Metodo| Path                   | Descripcion                           |
-|    |------------------------|---------------------------------------|
-|POST| /switch/add            | Agregar un switch.                    |
-|GET| /switch-list/list      | Muestra todos los switches agregados. |
-|GET| /switch-info/switch-id | Muestra la informacion de un solo switch.    |
+|Metodo| Path                | Descripcion                            |
+|-------------|------------------------|----------------------------- |
+|POST| /switch/add           | Agregar un switch.                     |
+|GET| /switch-list/list      | Muestra todos los switches agregados.  |
+|GET| /switch-info/switch-id | Muestra la informacion de un solo switch.|
 
 
 
