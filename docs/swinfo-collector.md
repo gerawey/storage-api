@@ -3,11 +3,12 @@ Este proyecto se trata sobre la colección de datos de todos los switches integr
 
 ## Modo de uso
 
-Path	Descripción
-/switch/add	Agregar un switch.
-/switch-list/list	Muestra todos los switches agregados.
-/switch-info/switch-id	Muestra la informacion del switch.
-/switch-port/port/add	Agregar puerto.
+| Path                   | Descripcion                           |
+|------------------------|---------------------------------------|
+| /switch/add            | Agregar un switch.                    |
+| /switch-list/list      | Muestra todos los switches agregados. |
+| /switch-info/switch-id | Muestra la informacion del switch.    |
+| /switch-port/port/add  | Agregar puerto.                       |
 
 ## Archivos Relacionados
 •	routes/switch-info.py
