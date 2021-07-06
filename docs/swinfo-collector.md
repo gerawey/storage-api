@@ -37,5 +37,5 @@ La estructura del proyecto se basa en las siguientes entidades:
 
 }
 
-##Respuesta de registro de switch exitoso.
+## Respuesta de registro de switch exitoso.
 { "id": "0001" }
