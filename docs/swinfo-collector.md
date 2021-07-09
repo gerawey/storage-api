@@ -77,4 +77,4 @@ La estructura del proyecto se basa en las siguientes entidades:
 | Concepto            | Commit Hash                            |
 |------------------------|----------------------------- |
 | Creacion de docs/swinfo-collector.md         |bc7242905067ce0ecc6776a770626fe84a408d62    |
-|Creacion de: modules/movie-info.py y routes/movie-info.py   | ba5091718ce9c46b9f6923581a7d27de2a085f37 |
+|Creacion de: modules/swinfo-collector.py y routes/swinfo-collector.py   | ba5091718ce9c46b9f6923581a7d27de2a085f37 |
