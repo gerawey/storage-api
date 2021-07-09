@@ -5,60 +5,56 @@ Este proyecto se trata sobre la colección de datos de todos los switches integr
 
 |Metodo| Path                | Descripcion                            |
 |-------------|------------------------|----------------------------- |
-|POST| /switch/add           | Agregar un switch.                     |
-|GET| /switch-list/list      | Muestra todos los switches agregados.  |
-|GET| /switch-info/switch-id | Muestra la informacion de un solo switch.|
+|POST| /switch/new          | Agregar un switch.                     |
+|POST| /connect | Agregar una nueva conneccion|
+|DELETE| /connect/<connecion_id>| Muestra la informacion de un solo switch.|
+|GET| /switch/<switch_id>| Muestra la informacion de un solo switch.|
+|GET| /switch/all      | Muestra todos los switches agregados.  |
+|GET| /switch/<switch_id>/ports/all | Muestra la informacion de los puertos de un switch|
+|GET| /switch/<switch_id>/ports/free | Muestra la informacion de los puertos libres de un switch|
+|GET| /switch/<switch_id>/ports/busy | Muestra la informacion de los puertos ocupados de un switch|
+|GET| /connect/<connecion_id>| Muestra la informacion de una connecion|
 
 
 
 ## Operaciones de consulta de datos
 ### Solicitar datos de un equipo de diagnóstico
 
-- Modelo
 - Número de Serie
+- Modelo
 - Puerto
+- Descripcion
 
 ## Guia para articular un API JSON
 La estructura del proyecto se basa en las siguientes entidades:
--	Switch (id, modelo, serial-number, puerto)
-- conexion (id, switch1, serial-number1, puerto1, switch2,serial-number2, puerto2)
+-	Switch (id, serial_number, model, ports, description)
+- connect (id, switch_in_id, switch_out_id, port_in, port_out,description)
 
 
 
 ## Operaciones de Almacenamiento de datos
 #### Operaciones para un switch
--	Se solicita modelo, número de serie y puerto.
+-	Se solicita modelo, número de serie, numero de puertos y una descripcion.
 -	El ID se auto asigna.
 
 ## Estructuras de switch
 ### Registro de switch
 {
-
-    "modelo": "Catalyst",
-
-    "serial-number": "FGH11549",
-
-    "puerto": "g0/0"
-
-
+    "id": "0001",
+    "serial_number": "FGH11549",    
+    "model": "Catalyst",
+    "ports": "24",
+    "description": "Este switch esta en el IDF 4"
 }
 ## Estructura de conexion
-### Registro de conexion
+### Registro de connect
 {
-
-  "modelo": "Catalyst 2960 24-S",
-
-  "serial-number": "FGH11549",
-
-  "puerto": "g0/0",
-
-  "modelo": "Catalyst 2960 24TC-L:",
-
-  "serial-number": "FGH1222",
-
-  "puerto": "g0/1"
-
-
+    "id": "0001",    
+    "switch_in_id": "0001",
+    "switch_out_id": "0002",
+    "port_in": "1",
+    "port_out": "1",
+    "description": "Esta conexion si funciona"
 }
 
 ## Respuesta de registro de switch exitoso.
