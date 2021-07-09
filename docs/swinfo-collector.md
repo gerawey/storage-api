@@ -40,21 +40,34 @@ La estructura del proyecto se basa en las siguientes entidades:
 ## Estructuras de switch
 ### Registro de switch
 {
+
     "id": "0001",
-    "serial_number": "FGH11549",    
+
+    "serial_number": "FGH11549",  
+
     "model": "Catalyst",
+
     "ports": "24",
+
     "description": "Este switch esta en el IDF 4"
+    
 }
 ## Estructura de conexion
 ### Registro de connect
 {
+
     "id": "0001",    
+
     "switch_in_id": "0001",
+
     "switch_out_id": "0002",
+
     "port_in": "1",
+
     "port_out": "1",
+
     "description": "Esta conexion si funciona"
+
 }
 
 ## Respuesta de registro de switch exitoso.
