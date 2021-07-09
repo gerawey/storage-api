@@ -66,3 +66,19 @@ La estructura del proyecto se basa en las siguientes entidades:
 
 ## Respuesta de registro de conexion exitoso.
 { "id": "0001" }
+
+
+--------------------------------------------------------------------------------------------
+## Evaluacion - Computo en la nube
+#### 1.	Crear un fork del proyecto storage-api Señalar cual es el commit-hash a partir de haber realizado el fork
+| Concepto            | Commit Hash                            |
+|------------------------|----------------------------- |
+| Creacion de Fork          |8c9c250a11ab0ac5c2b83ceb07cc5ec8dc1560f7                    |
+
+
+#### 2.	Crear los archivos correspondientes a su proyecto, y someterlos a control de versiones. Señalar el commit-hash que contiene la creación de dichos archivos.
+
+| Concepto            | Commit Hash                            |
+|------------------------|----------------------------- |
+| Creacion de docs/swinfo-collector.md         |bc7242905067ce0ecc6776a770626fe84a408d62    |
+|Creacion de: modules/movie-info.py y routes/movie-info.py   | ba5091718ce9c46b9f6923581a7d27de2a085f37 |
