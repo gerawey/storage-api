@@ -1,20 +1,43 @@
 ## Acerca de este proyecto
 Este proyecto se trata sobre la colección de datos de todos los switches integrados en la empresa. Con la finalidad de tener un control de a donde están conectados. De tal manera que se pueda encontrar cualquier problema fácilmente.
 
-## Modo de uso
+## Sector
+El proyecto esta enfocado al departamento de TI de cualquier tipo de empresa que utilice diferentes conexiones de switch y llevar un orden
+mas eficaz de de estos.
+
+## Modelado de datos
+La estructura del proyecto se basa en las siguientes entidades:
+-	Switch (id, serial_number, model, ports, description)
+- connect (id, switch_in_id, switch_out_id, port_in, port_out,description)
+
+
+## Rutas HTTP
 
 |Metodo| Path                | Descripcion                            |
 |-------------|------------------------|----------------------------- |
 |POST| /switch/new          | Agregar un switch.                     |
-|POST| /connect | Agregar una nueva conneccion|
-|DELETE| /connect/<connecion_id>| Muestra la informacion de un solo switch.|
+|POST| /connect | Agregar una nueva conexion|
+|DELETE| /switch/<switch_id>| Elimina un switch de la lista.|
+|UPDATE| /switch/<switch_id>| Actualiza la informacion de un switch|
+|DELETE| /connect/<conexion_id>| Elimina una conexion de la lista.|
+|UPDATE| /connect/<conexion_id>| Actualiza la informacion de una conexion.|
 |GET| /switch/<switch_id>| Muestra la informacion de un solo switch.|
 |GET| /switch/all      | Muestra todos los switches agregados.  |
-|GET| /switch/<switch_id>/ports/all | Muestra la informacion de los puertos de un switch|
-|GET| /switch/<switch_id>/ports/free | Muestra la informacion de los puertos libres de un switch|
-|GET| /switch/<switch_id>/ports/busy | Muestra la informacion de los puertos ocupados de un switch|
-|GET| /connect/<connecion_id>| Muestra la informacion de una connecion|
+|GET| /switch/<switch_id>/ports/all | Muestra la informacion de los puertos de un switch.|
+|GET| /switch/<switch_id>/ports/free | Muestra la informacion de los puertos libres de un switch.|
+|GET| /switch/<switch_id>/ports/busy | Muestra la informacion de los puertos ocupados de un switch.|
+|GET| /connect/<conexion_id>| Muestra la informacion de una conexion.|
 
+
+## Consulta de datos
++ Solicitar datos de un switch
+- Por id
++ Solicitar datos de una conexion
+- Por id
++ Solicitar todos los switches agregados
+- Todos
++ Solicitar todas las conexiones
+- Todos
 
 
 ## Operaciones de consulta de datos
@@ -24,12 +47,6 @@ Este proyecto se trata sobre la colección de datos de todos los switches integr
 - Modelo
 - Puerto
 - Descripcion
-
-## Guia para articular un API JSON
-La estructura del proyecto se basa en las siguientes entidades:
--	Switch (id, serial_number, model, ports, description)
-- connect (id, switch_in_id, switch_out_id, port_in, port_out,description)
-
 
 
 ## Operaciones de Almacenamiento de datos
@@ -50,7 +67,7 @@ La estructura del proyecto se basa en las siguientes entidades:
     "ports": "24",
 
     "description": "Este switch esta en el IDF 4"
-    
+
 }
 ## Estructura de conexion
 ### Registro de connect
@@ -75,6 +92,36 @@ La estructura del proyecto se basa en las siguientes entidades:
 
 ## Respuesta de registro de conexion exitoso.
 { "id": "0001" }
+
+## Ejemplos de interacciones con el servidor
+POST /switch/new
+Recibe una estructura de registro de un nuevo switch.
+201, registrar un switches regresa estructura de id para el nuevo switch.
+D.O.M, regresa mensaje de fallo.
+
+GET /switch/all
+200, regresa una lista de todos los switches agregados.
+D.O.M, regresa mensaje de fallo en formato json.
+curl http://localhost:8080/swinfo-collector/json-X GET -H "Content-Type: application/json" --data '{​​​​​​​"switch_id": "All"}​​​​​​​'
+
+GET /switch/<switch_id>
+200, regresa datos de un switch con id.
+D.O.M, regresa mensaje de fallo en formato json.
+curl http://localhost:8080/swinfo-collector/<switch_id> -X GET -H "Content-Type: application/json" --data '{​​​​​​​"movie_id": "P001"}
+
+POST /switch/<switch_id>
+201, actualizar informacion de un switch.
+D.O.M, regresa mensaje de fallo.
+
+POST /connect/<conexion_id>
+201, agregar una nueva conexion.
+D.O.M, regresa mensaje de fallo.
+
+GET /connect/all
+200, regresa una lista de todos las conexiones agregadas.
+D.O.M, regresa mensaje de fallo en formato json.
+curl http://localhost:8080/swinfo-collector/<conexion_id> GET -H "Content-Type: application/json" --data '{​​​​​​​"conexion_id": "All"}​​​​​​​'
+
 
 
 --------------------------------------------------------------------------------------------
