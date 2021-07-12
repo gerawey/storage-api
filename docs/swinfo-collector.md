@@ -30,13 +30,13 @@ La estructura del proyecto se basa en las siguientes entidades:
 
 
 ## Consulta de datos
-+ Solicitar datos de un switch
+1. Solicitar datos de un switch
 - Por id
-+ Solicitar datos de una conexion
+2. Solicitar datos de una conexion
 - Por id
-+ Solicitar todos los switches agregados
+3. Solicitar todos los switches agregados
 - Todos
-+ Solicitar todas las conexiones
+4. Solicitar todas las conexiones
 - Todos
 
 
@@ -94,38 +94,39 @@ La estructura del proyecto se basa en las siguientes entidades:
 { "id": "0001" }
 
 ## Ejemplos de interacciones con el servidor
-POST /switch/new
+
+`POST /switch/new
 Recibe una estructura de registro de un nuevo switch.
 201, registrar un switches regresa estructura de id para el nuevo switch.
-D.O.M, regresa mensaje de fallo.
+D.O.M, regresa mensaje de fallo.`
 
-GET /switch/all
+`GET /switch/all
 200, regresa una lista de todos los switches agregados.
 D.O.M, regresa mensaje de fallo en formato json.
-curl http://localhost:8080/swinfo-collector/json-X GET -H "Content-Type: application/json" --data '{​​​​​​​"switch_id": "All"}​​​​​​​'
+curl http://localhost:8080/swinfo-collector/json-X GET -H "Content-Type: application/json" --data '{​​​​​​​"switch_id": "All"}​​​​​​​'`
 
-GET /switch/<switch_id>
+`GET /switch/<switch_id>
 200, regresa datos de un switch con id.
 D.O.M, regresa mensaje de fallo en formato json.
-curl http://localhost:8080/swinfo-collector/<switch_id> -X GET -H "Content-Type: application/json" --data '{​​​​​​​"switch_id": "0001"}
+curl http://localhost:8080/swinfo-collector/<switch_id> -X GET -H "Content-Type: application/json" --data '{​​​​​​​"switch_id": "0001"}`
 
-POST /switch/<switch_id>
+`POST /switch/<switch_id>
 201, actualizar informacion de un switch.
-D.O.M, regresa mensaje de fallo.
+D.O.M, regresa mensaje de fallo.`
 
-POST /connect/<conexion_id>
+`POST /connect/<conexion_id>
 201, agregar una nueva conexion.
-D.O.M, regresa mensaje de fallo.
+D.O.M, regresa mensaje de fallo.`
 
-GET /connect/all
+`GET /connect/all
 200, regresa una lista de todos las conexiones agregadas.
 D.O.M, regresa mensaje de fallo en formato json.
-curl http://localhost:8080/swinfo-collector/<conexion_id> GET -H "Content-Type: application/json" --data '{​​​​​​​"conexion_id": "All"}​​​​​​​'
+curl http://localhost:8080/swinfo-collector/<conexion_id> GET -H "Content-Type: application/json" --data '{​​​​​​​"conexion_id": "All"}​​​​​​​'`
 
-GET /switch/<switch_id>/ports/free
+`GET /switch/<switch_id>/ports/free
 200, regresa una lista de todos los puertos libres de un switch.
 D.O.M, regresa mensaje de fallo en formato json.
-curl http://localhost:8080/swinfo-collector//<switch_id>/ports/free GET -H "Content-Type: application/json" --data '{​​​​​​​"switch_id": "All"}​​​​​​​'
+curl http://localhost:8080/swinfo-collector//<switch_id>/ports/free GET -H "Content-Type: application/json" --data '{​​​​​​​"switch_id": "All"}​​​​​​​'`
 
 
 
