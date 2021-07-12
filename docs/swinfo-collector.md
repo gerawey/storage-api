@@ -107,7 +107,7 @@ curl http://localhost:8080/swinfo-collector/json-X GET -H "Content-Type: applica
 GET /switch/<switch_id>
 200, regresa datos de un switch con id.
 D.O.M, regresa mensaje de fallo en formato json.
-curl http://localhost:8080/swinfo-collector/<switch_id> -X GET -H "Content-Type: application/json" --data '{​​​​​​​"movie_id": "P001"}
+curl http://localhost:8080/swinfo-collector/<switch_id> -X GET -H "Content-Type: application/json" --data '{​​​​​​​"switch_id": "0001"}
 
 POST /switch/<switch_id>
 201, actualizar informacion de un switch.
@@ -121,6 +121,11 @@ GET /connect/all
 200, regresa una lista de todos las conexiones agregadas.
 D.O.M, regresa mensaje de fallo en formato json.
 curl http://localhost:8080/swinfo-collector/<conexion_id> GET -H "Content-Type: application/json" --data '{​​​​​​​"conexion_id": "All"}​​​​​​​'
+
+GET /switch/<switch_id>/ports/free
+200, regresa una lista de todos los puertos libres de un switch.
+D.O.M, regresa mensaje de fallo en formato json.
+curl http://localhost:8080/swinfo-collector//<switch_id>/ports/free GET -H "Content-Type: application/json" --data '{​​​​​​​"switch_id": "All"}​​​​​​​'
 
 
 
