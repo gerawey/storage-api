@@ -143,4 +143,19 @@ curl http://localhost:8080/swinfo-collector//<switch_id>/ports/free GET -H "Cont
 | Concepto            | Commit Hash                            |
 |------------------------|----------------------------- |
 | Creacion de docs/swinfo-collector.md         |bc7242905067ce0ecc6776a770626fe84a408d62    |
-|Creacion de: modules/swinfo-collector.py y routes/swinfo-collector.py   | ba5091718ce9c46b9f6923581a7d27de2a085f37 |
+
+#### 3. Creacion de las rutas.
+| Concepto            | Commit Hash                            |
+|------------------------|----------------------------- |
+|Creacion de: routes/swinfo-collector.py   | ba5091718ce9c46b9f6923581a7d27de2a085f37 |
+
+#### 4. Creacion de documento de funciones.
+| Concepto            | Commit Hash                            |
+|------------------------|----------------------------- |
+|Creacion de: modules/swinfo-collector.py   | ba5091718ce9c46b9f6923581a7d27de2a085f37 |
+
+#### 5. Creacion de mock ups.
+
+| Concepto            | Commit Hash                            |
+|------------------------|----------------------------- |
+|Creacion de:   |  |
