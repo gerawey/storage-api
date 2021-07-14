@@ -159,3 +159,9 @@ curl http://localhost:8080/swinfo-collector//<switch_id>/ports/free GET -H "Cont
 | Concepto            | Commit Hash                            |
 |------------------------|----------------------------- |
 |Creacion de:   |  |
+
+
+
+<img src="docs/switch.png">
+
+<img src="docs/connect.png">
