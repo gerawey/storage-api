@@ -154,7 +154,7 @@ curl http://localhost:8080/swinfo-collector//<switch_id>/ports/free GET -H "Cont
 |------------------------|----------------------------- |
 |Creacion de: modules/swinfo-collector.py   | ba5091718ce9c46b9f6923581a7d27de2a085f37 |
 
-#### 5. Creacion de mock ups.
+#### 5. Creacion de moqups.
 
 | Concepto            | Commit Hash                            |
 |------------------------|----------------------------- |
