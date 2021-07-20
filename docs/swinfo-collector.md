@@ -69,6 +69,7 @@ La estructura del proyecto se basa en las siguientes entidades:
     "description": "Este switch esta en el IDF 4"
 
 }
+
 ## Estructura de conexion
 ### Registro de connect
 {
