@@ -24,42 +24,101 @@ else:
 app = bottle.Bottle()
 
 @app.get("/switch/new")
->>>>>>> ca8357a (Se crearon rutas especificas)
 def store_record(*args, **kwargs):
-    #aqui codigo
-    return dict(code=501,{"code" :"501", "messaje" : "Not implement"})
+    payload = bottle.request.json
+    print(payload)
+    bottle.response.status = 501
+    bottle.response.content_type = "application/json"
+    # data = bottle.request.json
+    # filename = ""
+    # store_string("switch", filename, json_dumps(data))
+    return dict(code=501, message = "Not Implemented")
+
 
 @app.get("/switch/<switch_id>")
-def store_record(*args, **kwargs):
-    #aqui codigo
-    return dict(code=501, message="not implemented")
+def info_by_code(*args, code=None, **kwargs):
+ payload = bottle.request.json
+    print(payload)
+ bottle.response.status = 501
+    bottle.response.content_type = "application/json"
+    # data = bottle.request.json
+    # filename = ""
+    # store_string("switch", filename, json_dumps(data))
+    pass
+    return dict(code=501, message = "Not Implemented")
 
 @app.get("/switch/all")
-def store_record(*args, **kwargs):
-    #aqui codigo
-    return dict(code=501, message="not implemented")
+def info_by_code(*args, code=None, **kwargs):
+ payload = bottle.request.json
+    print(payload)
+ bottle.response.status = 501
+    bottle.response.content_type = "application/json"
+    # data = bottle.request.json
+    # filename = ""
+    # store_string("switch", filename, json_dumps(data))
+    pass
+    return dict(code=501, message = "Not Implemented")
+
 
 @app.get("/connect/new")
-def store_record(*args, **kwargs):
-    #aqui codigo
-    return dict(code=501, message="not implemented")
+def void_report(*args, **kwargs):
+ payload = bottle.request.json
+    print(payload)
+
+bottle.response.status = 501
+    bottle.response.content_type = "application/json"
+    # data = bottle.request.json
+    # filename = ""
+    # store_string("switch", filename, json_dumps(data))
+    return dict(code=501, message = "Not Implemented")
 
 @app.get("/connect/<conexion_id>")
-def store_record(*args, **kwargs):
-    #aqui codigo
-    return dict(code=501, message="not implemented")
+def void_report(*args, **kwargs):
+ payload = bottle.request.json
+    print(payload)
+
+bottle.response.status = 501
+    bottle.response.content_type = "application/json"
+    # data = bottle.request.json
+    # filename = ""
+    # store_string("switch", filename, json_dumps(data))
+    return dict(code=501, message = "Not Implemented")
+
 
 @app.get("/switch/<switch_id>/ports/all")
-def store_record(*args, **kwargs):
-    #aqui codigo
-    return dict(code=501, message="not implemented")
+def void_report(*args, **kwargs):
+ payload = bottle.request.json
+    print(payload)
+
+bottle.response.status = 501
+    bottle.response.content_type = "application/json"
+    # data = bottle.request.json
+    # filename = ""
+    # store_string("switch", filename, json_dumps(data))
+    return dict(code=501, message = "Not Implemented")
+
 
 @app.get("/switch/<switch_id>/ports/free")
-def store_record(*args, **kwargs):
-    #aqui codigo
-    return dict(code=501, message="not implemented")
+def void_report(*args, **kwargs):
+ payload = bottle.request.json
+    print(payload)
+
+bottle.response.status = 501
+    bottle.response.content_type = "application/json"
+    # data = bottle.request.json
+    # filename = ""
+    # store_string("switch", filename, json_dumps(data))
+    return dict(code=501, message = "Not Implemented")
+
 
 @app.get("/switch/<switch_id>/ports/busy")
-    def store_record(*args, **kwargs):
-        #aqui codigo
-        return dict(code=501, message="not implemented")
+def void_report(*args, **kwargs):
+ payload = bottle.request.json
+    print(payload)
+
+bottle.response.status = 501
+    bottle.response.content_type = "application/json"
+    # data = bottle.request.json
+    # filename = ""
+    # store_string("switch", filename, json_dumps(data))
+    return dict(code=501, message = "Not Implemented")
