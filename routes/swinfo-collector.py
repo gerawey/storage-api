@@ -24,101 +24,70 @@ else:
 app = bottle.Bottle()
 
 @app.get("/switch/new")
-def store_record(*args, **kwargs):
+def get_switch(*args, **kwargs):
     payload = bottle.request.json
     print(payload)
     bottle.response.status = 501
     bottle.response.content_type = "application/json"
-    # data = bottle.request.json
-    # filename = ""
-    # store_string("switch", filename, json_dumps(data))
-    return dict(code=501, message = "Not Implemented")
+    return dict(code=501, message="Not implemented")
 
 
 @app.get("/switch/<switch_id>")
-def info_by_code(*args, code=None, **kwargs):
- payload = bottle.request.json
+def get_movie_by_id(*args, **kwargs):
+    payload = bottle.request.json
     print(payload)
- bottle.response.status = 501
+    bottle.response.status = 501
     bottle.response.content_type = "application/json"
-    # data = bottle.request.json
-    # filename = ""
-    # store_string("switch", filename, json_dumps(data))
-    pass
-    return dict(code=501, message = "Not Implemented")
+    return dict(code=501, message="Not implemented")
+
 
 @app.get("/switch/all")
-def info_by_code(*args, code=None, **kwargs):
- payload = bottle.request.json
+def get_switch_all(*args, **kwargs):
+    payload = bottle.request.json
     print(payload)
- bottle.response.status = 501
+    bottle.response.status = 501
     bottle.response.content_type = "application/json"
-    # data = bottle.request.json
-    # filename = ""
-    # store_string("switch", filename, json_dumps(data))
-    pass
-    return dict(code=501, message = "Not Implemented")
+    return dict(code=501, message="Not implemented")
 
 
 @app.get("/connect/new")
-def void_report(*args, **kwargs):
- payload = bottle.request.json
+def get_connect(*args, **kwargs):
+    payload = bottle.request.json
     print(payload)
-
-bottle.response.status = 501
+    bottle.response.status = 501
     bottle.response.content_type = "application/json"
-    # data = bottle.request.json
-    # filename = ""
-    # store_string("switch", filename, json_dumps(data))
-    return dict(code=501, message = "Not Implemented")
+    return dict(code=501, message="Not implemented")
 
 @app.get("/connect/<conexion_id>")
-def void_report(*args, **kwargs):
- payload = bottle.request.json
+def get_connect_by_id(*args, **kwargs):
+    payload = bottle.request.json
     print(payload)
-
-bottle.response.status = 501
+    bottle.response.status = 501
     bottle.response.content_type = "application/json"
-    # data = bottle.request.json
-    # filename = ""
-    # store_string("switch", filename, json_dumps(data))
-    return dict(code=501, message = "Not Implemented")
-
+    return dict(code=501, message="Not implemented")
 
 @app.get("/switch/<switch_id>/ports/all")
-def void_report(*args, **kwargs):
- payload = bottle.request.json
+def get_switch_all_ports(*args, **kwargs):
+    payload = bottle.request.json
     print(payload)
-
-bottle.response.status = 501
+    bottle.response.status = 501
     bottle.response.content_type = "application/json"
-    # data = bottle.request.json
-    # filename = ""
-    # store_string("switch", filename, json_dumps(data))
-    return dict(code=501, message = "Not Implemented")
+    return dict(code=501, message="Not implemented")
 
 
 @app.get("/switch/<switch_id>/ports/free")
-def void_report(*args, **kwargs):
- payload = bottle.request.json
+def get_switch_free_ports(*args, **kwargs):
+    payload = bottle.request.json
     print(payload)
-
-bottle.response.status = 501
+    bottle.response.status = 501
     bottle.response.content_type = "application/json"
-    # data = bottle.request.json
-    # filename = ""
-    # store_string("switch", filename, json_dumps(data))
-    return dict(code=501, message = "Not Implemented")
+    return dict(code=501, message="Not implemented")
 
 
 @app.get("/switch/<switch_id>/ports/busy")
-def void_report(*args, **kwargs):
- payload = bottle.request.json
+def get_switch_busy_ports(*args, **kwargs):
+    payload = bottle.request.json
     print(payload)
-
-bottle.response.status = 501
+    bottle.response.status = 501
     bottle.response.content_type = "application/json"
-    # data = bottle.request.json
-    # filename = ""
-    # store_string("switch", filename, json_dumps(data))
-    return dict(code=501, message = "Not Implemented")
+    return dict(code=501, message="Not implemented")
