@@ -2,7 +2,10 @@ import bottle
 from modules.bottles import BottleJson
 from modules.swinfo_collector import (
     add_switch,
-    add_connect
+    add_connect,
+    get_switch_all,
+    update_switch,
+    get_connect_all
 )
 
 app = BottleJson()

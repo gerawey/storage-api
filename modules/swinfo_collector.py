@@ -37,13 +37,13 @@ def get_switch_all(switch=None):
 
 def switch_by_id(movie_id=None):
     query_result = query_storage(
-        "/switch/<switch_id>",
+        "/switch/all",
     )
     if switch_id is not None:
         return [
            r
            for r in query_result["content"]
-           if movie_id in r
+           if switch_id in r
         ]
     print("Hecho")
 
@@ -68,7 +68,7 @@ def update_switch(switch_id = None, serial_number = None, model = None, ports = 
     )
     return datos
 
-def add_review(connect_id = None, switch_in_id = None, switch_out_id = None, port_in = None,port_out = None):
+def add_connect(connect_id = None, switch_in_id = None, switch_out_id = None, port_in = None,port_out = None):
 
     print("Desde Modulo add_review")
     print(connect_id, switch_in_id, switch_out_id, port_in, port_out)
@@ -88,3 +88,22 @@ def add_review(connect_id = None, switch_in_id = None, switch_out_id = None, por
         json.dumps(almacenable)
     )
     return datos
+
+def get_connect_all(switch=None):
+    query_result = query_storage(
+        "/connect/all",
+    )
+    if switch is None:
+        return query_result["content"]
+
+def switch_by_id(movie_id=None):
+    query_result = query_storage(
+        "/connect/",
+    )
+    if switch_id is not None:
+        return [
+           r
+           for r in query_result["content"]
+           if connect_id in r
+        ]
+    print("Hecho")
