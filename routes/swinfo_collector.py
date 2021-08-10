@@ -20,7 +20,9 @@ def switch(*args, **kwargs):
     print(payload.dict)
     try:
         #switch_id: int(payload['switch_id'])
+        print("hola0")
         serial_number = str(payload.get('serial_number'))
+        print("hola")
         model = str(payload.get('model'))
         ports = str(payload.get('ports'))
         description = str(payload.get('description'))
