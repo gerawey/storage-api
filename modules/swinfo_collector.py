@@ -8,11 +8,6 @@ from modules.storage import (
 )
 
 def add_switch(switch_id = None, serial_number = None, model = None, ports = None, description = None):
-
-    print("Desde Modulo store")
-    print(switch_id, serial_number, model, ports, description)
-    print("Exito")
-
     almacenable = {
         "switch_id": switch_id,
         "serial_number": serial_number,
@@ -22,7 +17,7 @@ def add_switch(switch_id = None, serial_number = None, model = None, ports = Non
     }
     nombre_de_archivo = f"{switch_id}.json"
     datos = store_string(
-        "/switch/addswitch",
+        "switch",
         nombre_de_archivo,
         json.dumps(almacenable)
     )
@@ -70,7 +65,7 @@ def update_switch(switch_id = None, serial_number = None, model = None, ports = 
 
 def add_connect(connect_id = None, switch_in_id = None, switch_out_id = None, port_in = None,port_out = None):
 
-    print("Desde Modulo add_review")
+    print("Desde Modulo add_connect")
     print(connect_id, switch_in_id, switch_out_id, port_in, port_out)
     print("Exito")
 

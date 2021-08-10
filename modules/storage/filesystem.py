@@ -11,6 +11,7 @@ except KeyError:
 
 def get_file_to_store(collection, filename):
     target = (storage_dir / collection / filename)
+    print(target)
     if target.exists():
         raise Exception("File already exists")
     target.parent.mkdir(exist_ok=True, parents=True)

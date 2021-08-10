@@ -20,24 +20,38 @@ app = BottleJson()
 
 @app.post("/addswitch")
 def addswitch(*args, **kwargs):
-    print(bottle.request.__dict__)
-    payload = bottle.request.body
-    print(payload)
+    payload = bottle.request.json
     try:
-        #switch_id: int(payload['switch_id'])
-        print("hola0")
-        serial_number = str(payload.get('serial_number', None))
-        print("hola")
-        model = str(payload.get('model'))
-        ports = str(payload.get('ports'))
-        description = str(payload.get('description'))
-        switch_id = str(payload.get('switch_id'))
-        print(serial_number, model, ports, description)
+        str(payload.get('serial_number'))
+        str(payload.get('model'))
+        str(payload.get('ports'))
+        str(payload.get('description'))
+        str(payload.get('switch_id'))
         respuesta = add_switch(**payload)
-        raise bottle.HTTPError(201, "Switch Agregado")
+        bottle.response.body="Switch Agregado"
+        bottle.response.status=201
+        bottle.response.headers['Content-type']="text"
+        return
     except:
         raise bottle.HTTPError(400, "Error no se pudo agregar switch")
-    raise bottle.HTTPError(500,"Error general")
+
+@app.post("/addconnect")
+def addconnect(*args, **kwargs):
+    payload = bottle.request.json
+    try:
+        str(payload.get('connect_id'))
+        str(payload.get('switch_in_id'))
+        str(payload.get('switch_out_id'))
+        str(payload.get('port_in'))
+        str(payload.get('port_out'))
+        respuesta = add_connect(**payload)
+        bottle.response.body="Connect Agregado"
+        bottle.response.status=201
+        bottle.response.headers['Content-type']="text"
+        return
+    except:
+        raise bottle.HTTPError(400, "Error no se pudo agregar la conexion")
+
 
 
 @app.get("/switch/<switch_id>")
