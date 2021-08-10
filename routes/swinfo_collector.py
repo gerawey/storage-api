@@ -13,7 +13,7 @@ app = BottleJson()
 @app.get("/")
     #Default route
 
-@app.post("/switch/new")
+@app.post("/switchs")
 def switch(*args, **kwargs):
     payload = bottle.request.query
     print(payload.dict)
