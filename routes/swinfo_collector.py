@@ -20,6 +20,7 @@ app = BottleJson()
 
 @app.post("/addswitch")
 def addswitch(*args, **kwargs):
+    print(bottle.request.__dict__)
     payload = bottle.request.json
     print(payload.dict)
     try:
