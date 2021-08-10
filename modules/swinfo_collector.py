@@ -22,7 +22,7 @@ def add_switch(switch_id = None, serial_number = None, model = None, ports = Non
     }
     nombre_de_archivo = f"{switch_id}.json"
     datos = store_string(
-        "/switch",
+        "/switch/addswitch",
         nombre_de_archivo,
         json.dumps(almacenable)
     )

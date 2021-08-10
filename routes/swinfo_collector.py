@@ -14,9 +14,15 @@ app = BottleJson()
 @app.get("/")
     #Default route
 
+ ```` curl http://localhost:8080/switch/addswitch -X POST \
+-H 'Content-Type: application/json' -d \
+'{"switch_id": "001","serial_number": "FGH11549", \
+ "model": "Catalyst", "ports": "24", \
+"description": "Esta en el IDF 3"}' ````
+
 @app.post("/addswitch")
 def addswitch(*args, **kwargs):
-    payload = bottle.request.query
+    payload = bottle.request.json
     print(payload.dict)
     try:
         #switch_id: int(payload['switch_id'])
