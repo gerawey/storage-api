@@ -21,7 +21,7 @@ def switch(*args, **kwargs):
     try:
         #switch_id: int(payload['switch_id'])
         print("hola0")
-        serial_number = str(payload.get('serial_number'))
+        serial_number = str(payload.get('serial_number', None))
         print("hola")
         model = str(payload.get('model'))
         ports = str(payload.get('ports'))
