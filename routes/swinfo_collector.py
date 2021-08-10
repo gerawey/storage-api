@@ -11,7 +11,7 @@ from modules.swinfo_collector import (
 app = BottleJson()
 
 @app.post("/switch")
-def add_switch(*args, **kwargs):
+def switch(*args, **kwargs):
     payload = bottle.request.query
     print(payload.dict)
     try:
@@ -21,7 +21,7 @@ def add_switch(*args, **kwargs):
         ports = str(payload['ports'])
         description = str(payload['description'])
         id = str(payload['id'])
-        respuesta = creador_nota(**payload)
+        respuesta = add_switch(**payload)
         raise bottle.HTTPError(201, "Switch Agregado")
     except:
         raise bottle.HTTPError(400, "Error no se pudo agregar switch")
