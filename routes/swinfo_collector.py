@@ -25,7 +25,6 @@ def switch(*args, **kwargs):
         ports = str(payload['ports'])
         description = str(payload['description'])
         switch_id = str(payload['switch_id'])
-        raise bottle.HTTPError(201, "Switch Agregado")
         print(serial_number, model, ports, description)
         respuesta = add_switch(**payload)
         raise bottle.HTTPError(201, "Switch Agregado")
