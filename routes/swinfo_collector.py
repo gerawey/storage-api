@@ -18,7 +18,7 @@ def add_switch(*args, **kwargs):
         #switch_id: int(payload['switch_id'])
         serial_number = str(payload['Serial number'])
         model = str(payload['Model'])
-        ports = int(payload['ports'])
+        ports = str(payload['ports'])
         description = str(payload['description'])
         id = str(payload['id'])
         respuesta = creador_nota(**payload)

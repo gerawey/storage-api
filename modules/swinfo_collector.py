@@ -18,9 +18,9 @@ def add_switch(switch_id = None, serial_number = None, model = None, ports = Non
         "serial_number": serial_number,
         "model": model,
         "ports": ports,
-        "rdescription": description
+        "description": description
     }
-    nombre_de_archivo = f"{switch_id}-{title}.json"
+    nombre_de_archivo = f"{switch_id}.json"
     datos = store_string(
         "/switch",
         nombre_de_archivo,
