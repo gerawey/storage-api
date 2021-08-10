@@ -16,7 +16,7 @@ app = BottleJson()
 
 @app.post("/addswitch")
 def switch(*args, **kwargs):
-    payload = bottle.request.json
+    payload = bottle.request.query
     print(payload.dict)
     try:
         #switch_id: int(payload['switch_id'])
@@ -25,6 +25,7 @@ def switch(*args, **kwargs):
         ports = str(payload['ports'])
         description = str(payload['description'])
         switch_id = str(payload['switch_id'])
+        print(serial_number, model, ports, description)
         respuesta = add_switch(**payload)
         raise bottle.HTTPError(201, "Switch Agregado")
     except:
