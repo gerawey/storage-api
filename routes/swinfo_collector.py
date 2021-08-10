@@ -10,17 +10,20 @@ from modules.swinfo_collector import (
 
 app = BottleJson()
 
-@app.post("/switch")
+@app.get("/")
+    #Default route
+
+@app.post("/switch/new")
 def switch(*args, **kwargs):
     payload = bottle.request.query
     print(payload.dict)
     try:
         #switch_id: int(payload['switch_id'])
-        serial_number = str(payload['Serial number'])
-        model = str(payload['Model'])
+        serial_number = str(payload['serial_number'])
+        model = str(payload['model'])
         ports = str(payload['ports'])
         description = str(payload['description'])
-        id = str(payload['id'])
+        id = str(payload['switch_id'])
         respuesta = add_switch(**payload)
         raise bottle.HTTPError(201, "Switch Agregado")
     except:
