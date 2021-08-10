@@ -22,7 +22,7 @@ app = BottleJson()
 def addswitch(*args, **kwargs):
     print(bottle.request.__dict__)
     payload = bottle.request.body
-    print(payload.dict)
+    print(payload)
     try:
         #switch_id: int(payload['switch_id'])
         print("hola0")
