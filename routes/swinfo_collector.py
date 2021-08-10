@@ -21,7 +21,7 @@ app = BottleJson()
 @app.post("/addswitch")
 def addswitch(*args, **kwargs):
     print(bottle.request.__dict__)
-    payload = bottle.request.json
+    payload = bottle.request.body
     print(payload.dict)
     try:
         #switch_id: int(payload['switch_id'])
