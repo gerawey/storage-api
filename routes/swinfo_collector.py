@@ -15,7 +15,7 @@ app = BottleJson()
     #Default route
 
 @app.post("/addswitch")
-def switch(*args, **kwargs):
+def addswitch(*args, **kwargs):
     payload = bottle.request.query
     print(payload.dict)
     try:
