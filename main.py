@@ -19,11 +19,7 @@ app.mount("/example", routes.example.app)
 app.mount("/storage", routes.storage.app)
 app.mount("/switch", routes.swinfo_collector.app)
 app.mount("/connect", routes.swinfo_collector.app)
-#app.mount("/list", routes.movie_info.app)
 
-#app.mount("/<movie_id>", routes.movie_info.app)
-#app.mount("/<movie_id>/review", routes.movie_info.app)
-#app.mount("/<movie_id>/review/<review_id>", routes.movie_info.app)
 
 @app.get("/")
 def root_index(*args, **kwargs):
