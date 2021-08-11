@@ -63,22 +63,17 @@ def update_switch(switch_id = None, serial_number = None, model = None, ports = 
     )
     return datos
 
-def add_connect(connect_id = None, switch_in_id = None, switch_out_id = None, port_in = None,port_out = None):
-
-    print("Desde Modulo add_connect")
-    print(connect_id, switch_in_id, switch_out_id, port_in, port_out)
-    print("Exito")
-
+def add_connect(connect_id = None, switch_in_id = None, switch_out_id = None, port_in = None, port_out = None):
     almacenable = {
-        "connect_id": connect_id,
-        "switch_in_id":switch_in_id,
+        "switch_id": switch_id,
+        "switch_in_id": switch_in_id,
         "switch_out_id": switch_out_id,
         "port_in": port_in,
         "port_out": port_out
     }
     nombre_de_archivo = f"{connect_id}.json"
     datos = store_string(
-        "/connect",
+        "connect",
         nombre_de_archivo,
         json.dumps(almacenable)
     )
