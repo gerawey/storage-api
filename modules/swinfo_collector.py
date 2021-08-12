@@ -25,14 +25,14 @@ def add_switch(switch_id = None, serial_number = None, model = None, ports = Non
 
 def get_switch_all(switch=None):
     query_result = query_storage(
-        "/switch",
+        "switch",
     )
     if switch is None:
         return query_result["content"]
 
 def switch_by_id(movie_id=None):
     query_result = query_storage(
-        "/switch/all",
+        "switch",
     )
     if switch_id is not None:
         return [
@@ -43,10 +43,6 @@ def switch_by_id(movie_id=None):
     print("Hecho")
 
 def update_switch(switch_id = None, serial_number = None, model = None, ports = None, description = None):
-    print("Desde Modulo store")
-    print(switch_id, serial_number, model, ports, description)
-    print("Exito")
-
     almacenable = {
         "switch_id": switch_id,
         "serial_number": serial_number,
@@ -56,7 +52,7 @@ def update_switch(switch_id = None, serial_number = None, model = None, ports = 
     }
     nombre_de_archivo = f"{switch_id}.json"
     datos = store_string(
-        "/switch",
+        "switch",
         nombre_de_archivo,
         json.dumps(almacenable),
         update=True
@@ -81,14 +77,14 @@ def add_connect(connect_id = None, switch_in_id = None, switch_out_id = None, po
 
 def get_connect_all(switch=None):
     query_result = query_storage(
-        "/connect/all",
+        "connect",
     )
     if switch is None:
         return query_result["content"]
 
-def switch_by_id(movie_id=None):
+def connect_by_id(movie_id=None):
     query_result = query_storage(
-        "/connect/",
+        "connect",
     )
     if switch_id is not None:
         return [

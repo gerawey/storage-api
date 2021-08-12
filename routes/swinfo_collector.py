@@ -53,14 +53,30 @@ def addconnect(*args, **kwargs):
     except:
         raise bottle.HTTPError(400, "Error no se pudo agregar la conexion")
 
-
+#curl http://localhost:8080/switch/update -X POST  -H 'Content-Type: application/json' -d '{"switch_id": "002","serial_number": "FGH11550", "model": "Catalyst", "ports": "24", "description": "Esta en el IDF 2"}'
+@app.post("/switch/update")
+def update_switch(*args, **kwargs):
+    payload = bottle.request.json
+    print(payload)
+    try:
+        str(payload.get('connect_id'))
+        str(payload.get('switch_in_id'))
+        str(payload.get('switch_out_id'))
+        str(payload.get('port_in'))
+        str(payload.get('port_out'))
+        respuesta = update_c(**payload)
+        print(respuesta)
+    except:
+        print("datos invalidos")
+        raise bottle.HTTPError(400, "Invalid data")
+    raise bottle.HTTPError(201, respuesta)
 
 @app.get("/switch/<switch_id>")
 def switch_by_id(*args, **kwargs):
     payload = bottle.request.json
     print(payload)
     try:
-        id = str(payload['id'])
+        switch_id = str(payload['switch_id'])
         print("ID valida")
         respuesta = query_information(**payload)
         raise bottle.HTTPError(201)
