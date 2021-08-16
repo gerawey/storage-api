@@ -15,7 +15,7 @@ def add_switch(switch_id = None, serial_number = None, model = None, ports = Non
         "ports": ports,
         "description": description
     }
-    nombre_de_archivo = f"{switch_id}.json"
+    nombre_de_archivo = f"{switch_id}-{serial_number}.json"
     datos = store_string(
         "switch",
         nombre_de_archivo,
@@ -30,7 +30,7 @@ def get_switch_all(switch=None):
     if switch is None:
         return query_result["content"]
 
-def switch_by_id(movie_id=None):
+def switch_by_id(switch_id=None):
     query_result = query_storage(
         "switch",
     )
@@ -49,8 +49,8 @@ def update_switch(switch_id = None, serial_number = None, model = None, ports = 
         "model": model,
         "ports": ports,
         "description": description
-    }
-    nombre_de_archivo = f"{switch_id}.json"
+        }
+    nombre_de_archivo = f"{switch_id}-{serial_number}.json"
     datos = store_string(
         "switch",
         nombre_de_archivo,
@@ -61,11 +61,11 @@ def update_switch(switch_id = None, serial_number = None, model = None, ports = 
 
 def add_connect(connect_id = None, switch_in_id = None, switch_out_id = None, port_in = None, port_out = None):
     almacenable = {
-        "switch_id": switch_id,
+        "connect_id": connect_id,
         "switch_in_id": switch_in_id,
         "switch_out_id": switch_out_id,
         "port_in": port_in,
-        "port_out": port_out
+        "port_out": port_out,
     }
     nombre_de_archivo = f"{connect_id}.json"
     datos = store_string(
@@ -73,7 +73,7 @@ def add_connect(connect_id = None, switch_in_id = None, switch_out_id = None, po
         nombre_de_archivo,
         json.dumps(almacenable)
     )
-    return datos
+    return False
 
 def get_connect_all(switch=None):
     query_result = query_storage(

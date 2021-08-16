@@ -27,7 +27,7 @@ def addswitch(*args, **kwargs):
         str(payload.get('ports'))
         str(payload.get('description'))
         str(payload.get('switch_id'))
-        respuesta = add_switch(**payload)
+        add_switch(**payload)
         bottle.response.body="Switch Agregado"
         bottle.response.status=201
         bottle.response.headers['Content-type']="text"
@@ -45,7 +45,13 @@ def addconnect(*args, **kwargs):
         str(payload.get('switch_out_id'))
         str(payload.get('port_in'))
         str(payload.get('port_out'))
-        respuesta = add_connect(**payload)
+        respuesta = add_connect(
+            connect_id=payload.get('connect_id'),
+            switch_in_id=payload.get('switch_in_id'),
+            switch_out_id=payload.get('switch_out_id'),
+            port_in=payload.get('port_in'),
+            port_out=payload.get('port_out')
+        )
         bottle.response.body="Connect Agregado"
         bottle.response.status=201
         bottle.response.headers['Content-type']="text"
@@ -53,40 +59,36 @@ def addconnect(*args, **kwargs):
     except:
         raise bottle.HTTPError(400, "Error no se pudo agregar la conexion")
 
-#curl http://localhost:8080/switch/update -X POST  -H 'Content-Type: application/json' -d '{"switch_id": "002","serial_number": "FGH11550", "model": "Catalyst", "ports": "24", "description": "Esta en el IDF 2"}'
-@app.post("/switch/update")
-def update_switch(*args, **kwargs):
-    payload = bottle.request.json
-    print(payload)
+@app.get("/<id>")
+def query_n_s(*args, id=None, **kwargs):
     try:
-        str(payload.get('connect_id'))
-        str(payload.get('switch_in_id'))
-        str(payload.get('switch_out_id'))
-        str(payload.get('port_in'))
-        str(payload.get('port_out'))
-        respuesta = update_c(**payload)
-        print(respuesta)
+        respuesta = query_s(id = id)
     except:
-        print("datos invalidos")
-        raise bottle.HTTPError(400, "Invalid data")
-    raise bottle.HTTPError(201, respuesta)
+        raise bottle.HTTPError(400)
+    raise bottle.HTTPError(200, respuesta)
 
-@app.get("/switch/<switch_id>")
-def switch_by_id(*args, **kwargs):
+@app.post("/switch/<switch_id>")
+def updateswitch(*args, **kwargs):
     payload = bottle.request.json
     print(payload)
     try:
         switch_id = str(payload['switch_id'])
-        print("ID valida")
-        respuesta = query_information(**payload)
-        raise bottle.HTTPError(201)
+        serial_number = str(payload['serial_number'])
+        model = str(payload['model'])
+        ports = str(payload['ports'])
+        description = str(payload['description'])
+        print("Datos validos")
+        respuesta = update_switch(**payload)
+        print(respuesta)
+        print("Almost done")
     except:
-        raise bottle.HTTPError(501, "ID invalida")
-    raise bottle.HTTPError(500, "Error general")
+        print("Datos invalidos")
+        raise bottle.HTTPError(400, "Invalid data")
+    raise bottle.HTTPError(201, "Movie data has been updated")
 
-
-@app.get("/switch/all")
-def get_switch_all(*args, **kwargs):
+# curl http://localhost:8080/switch/list -X GET
+@app.get("/switch/list")
+def get_switchs(*args, **kwargs):
     try:
        respuesta = get_switch_all()
     except:
@@ -94,22 +96,6 @@ def get_switch_all(*args, **kwargs):
     raise bottle.HTTPError(200, respuesta)
 
 
-@app.get("/connect/new")
-def add_connect(*args, **kwargs):
-    payload = bottle.request.query
-    print(payload.dict)
-    try:
-        #switch_id: int(payload['switch_id'])
-        switch_in_id = str(payload['switch in id'])
-        switch_out_id = str(payload['switch out id'])
-        port_in = str(payload['port in'])
-        port_out = str(payload['port out'])
-        id = str(payload['id'])
-        respuesta = creador_nota(**payload)
-        raise bottle.HTTPError(201, "Conexion Agregada")
-    except:
-        raise bottle.HTTPError(400, "Error no se pudo agregar conexion")
-    raise bottle.HTTPError(500,"Error general")
 
 @app.get("/connect/<conexion_id>")
 def get_connect_by_id(*args, **kwargs):
