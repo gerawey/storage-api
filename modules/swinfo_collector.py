@@ -82,11 +82,11 @@ def get_connect_all(switch=None):
     if switch is None:
         return query_result["content"]
 
-def connect_by_id(movie_id=None):
+def connect_by_id(connect_id=None):
     query_result = query_storage(
-        "connect",
+        "/connect/<connect_id>",
     )
-    if switch_id is not None:
+    if connect_id is not None:
         return [
            r
            for r in query_result["content"]

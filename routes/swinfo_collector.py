@@ -97,9 +97,9 @@ def get_switchs(*args, **kwargs):
     raise bottle.HTTPError(200, respuesta)
 
 
-
-@app.get("/connect/<conexion_id>")
-def get_connect_by_id(*args, **kwargs):
+# curl http://localhost:8080/connect/001 -X GET
+@app.get("<connect_id>")
+def connect_by_id(*args, **kwargs):
         payload = bottle.request.json
         print(payload)
         try:
@@ -129,7 +129,7 @@ def get_switch_free_ports(*args, **kwargs):
     return dict(code=501, message="Not implemented")
 
 
-@app.get("/switch/<switch_id>/ports/busy")
+@app.get("/<switch_id>/ports/busy")
 def get_switch_busy_ports(*args, **kwargs):
     payload = bottle.request.json
     print(payload)

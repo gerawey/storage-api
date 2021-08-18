@@ -97,12 +97,12 @@ La estructura del proyecto se basa en las siguientes entidades:
 
 ## Ejemplos de interacciones con el servidor
 
-`POST /switch/new
+`POST /switch
 Recibe una estructura de registro de un nuevo switch.
 201, registrar un switches regresa estructura de id para el nuevo switch.
 D.O.M, regresa mensaje de fallo.`
 
-`GET /switch/all
+`GET /switch/list
 200, regresa una lista de todos los switches agregados.
 D.O.M, regresa mensaje de fallo en formato json.
 curl http://localhost:8080/swinfo-collector/json-X GET -H "Content-Type: application/json" --data '{​​​​​​​"switch_id": "All"}​​​​​​​'`
