@@ -22,11 +22,12 @@ La estructura del proyecto se basa en las siguientes entidades:
 |DELETE| /connect/<conexion_id>| Elimina una conexion de la lista.|
 |UPDATE| /connect/<conexion_id>| Actualiza la informacion de una conexion.|
 |GET| /switch/<switch_id>| Muestra la informacion de un solo switch.|
-|GET| /switch/all      | Muestra todos los switches agregados.  |
+|GET| /switch/list     | Muestra todos los switches agregados.  |
 |GET| /switch/<switch_id>/ports/all | Muestra la informacion de los puertos de un switch.|
 |GET| /switch/<switch_id>/ports/free | Muestra la informacion de los puertos libres de un switch.|
 |GET| /switch/<switch_id>/ports/busy | Muestra la informacion de los puertos ocupados de un switch.|
 |GET| /connect/<conexion_id>| Muestra la informacion de una conexion.|
+|GET| /connect/list| Muestra una lista de conexiones.|
 
 
 ## Consulta de datos
